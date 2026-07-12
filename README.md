@@ -51,30 +51,39 @@ Log into your local PostgreSQL client environment and establish a new empty data
 ```sql
 CREATE DATABASE distributed_job_scheduler;
 
-### BACKEND SERVER AND WORKERS ACTIVATION 
-1. Navigate to the backend directory and install dependencies:
+### Database Layer Configuration
 
+Log into your local PostgreSQL client environment and establish a new empty database:
+
+```sql
+CREATE DATABASE distributed_job_scheduler;
+⚙️ Backend Server & Workers Activation
+Navigate to the backend directory and install dependencies:
+
+Bash
 cd backend
 npm install
+Create a .env file inside the /backend folder:
 
-2. Create a .env file inside the /backend folder:
+Code snippet
 PORT=4000
 DATABASE_URL=postgres://username:password@localhost:5432/distributed_job_scheduler
 NODE_ENV=development
+Run database migrations to build tables:
 
-3.Run database migrations to build tables:
+Bash
 npx knex migrate:latest
+Compile TypeScript and start the engine:
 
-4. Compile TypeScript and start the engine:
+Bash
 npx tsc && node dist/src/index.js
+💻 Frontend Dashboard Deployment
+Open a new terminal window, navigate into the frontend directory, and run the installation script:
 
-### 3. Frontend Dashboard Deployment
-1. Open a new terminal window, navigate into the frontend directory, and run the installation script:
+Bash
 cd frontend
 npm install
+Run the Next.js local framework development environment:
 
-2. Run the Next.js local framework development environment:
+Bash
 npm run dev
-
-3. View the system tracking console dashboard at: http://localhost:3000
-
