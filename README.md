@@ -46,12 +46,12 @@ To achieve high throughput with optimal index lookup times, the schema avoids co
 * **Runtime:** Node.js (v18.x+) & npm (v9.x+)
 * **Storage Engine:** PostgreSQL database instance
 
-### 1. Database Layer Configuration
+###  Database Layer Configuration
 Log into your local PostgreSQL client environment and establish a new empty database:
 ```sql
 CREATE DATABASE distributed_job_scheduler;
 
-BACKEND SERVER AND WORKERS ACTIVATION 
+### BACKEND SERVER AND WORKERS ACTIVATION 
 1. Navigate to the backend directory and install dependencies:
 
 cd backend
@@ -68,7 +68,7 @@ npx knex migrate:latest
 4. Compile TypeScript and start the engine:
 npx tsc && node dist/src/index.js
 
-Frontend Dashboard Deployment
+### 3. Frontend Dashboard Deployment
 1. Open a new terminal window, navigate into the frontend directory, and run the installation script:
 cd frontend
 npm install
