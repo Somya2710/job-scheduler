@@ -50,40 +50,58 @@ To achieve high throughput with optimal index lookup times, the schema avoids co
 Log into your local PostgreSQL client environment and establish a new empty database:
 ```sql
 CREATE DATABASE distributed_job_scheduler;
+```
 
-### Database Layer Configuration
 
-Log into your local PostgreSQL client environment and establish a new empty database:
+### Backend Server and Workers Activation
 
-```sql
-CREATE DATABASE distributed_job_scheduler;
-⚙️ Backend Server & Workers Activation
-Navigate to the backend directory and install dependencies:
+Navigate to the backend directory and install the required dependencies.
 
-Bash
+```bash
 cd backend
 npm install
-Create a .env file inside the /backend folder:
+```
 
-Code snippet
+#### Configure Environment Variables
+
+Create a `.env` file inside the `backend` directory.
+
+```env
 PORT=4000
 DATABASE_URL=postgres://username:password@localhost:5432/distributed_job_scheduler
 NODE_ENV=development
-Run database migrations to build tables:
+```
 
-Bash
+#### Run Database Migrations
+
+```bash
 npx knex migrate:latest
-Compile TypeScript and start the engine:
+```
 
-Bash
-npx tsc && node dist/src/index.js
-💻 Frontend Dashboard Deployment
-Open a new terminal window, navigate into the frontend directory, and run the installation script:
+#### Start the Backend Server
 
-Bash
+```bash
+npx tsc
+node dist/src/index.js
+```
+
+### 💻 Frontend Dashboard
+
+#### Install Dependencies
+
+```bash
 cd frontend
 npm install
-Run the Next.js local framework development environment:
+```
 
-Bash
+#### Start the Development Server
+
+```bash
 npm run dev
+```
+
+Visit:
+
+```text
+http://localhost:3000
+```
